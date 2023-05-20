@@ -84,8 +84,8 @@ void *gcofRemove(gCofo *c, void *key, int (*cmp)(void *, void *)) {
     int stats = cmp(c->item[i], key);
 
     while (i < c->numItens && stats != TRUE) {
-      i++;
       stats = cmp(c->item[i], key);
+      i++;
     }
 
     if (stats == TRUE) {
